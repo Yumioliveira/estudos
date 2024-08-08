@@ -6,11 +6,12 @@
     <title>media query</title>
     <script src="https://kit.fontawesome.com/7eac05663c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilo/mediaquery.css">
 </head>
-<body>
+<body onresize="mudouTamanho">
     <header>
         <h1>Meu site</h1>
-        <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
+        <i id="icone" class="fa-solid fa-bars" onclick="clickMenu()"></i>
             <menu  id="itens">
                 <ul>
                     <li>
@@ -49,6 +50,16 @@
         </article>
     </main>
     <script>
+
+        function mudouTamanho() {
+            if (window.innerHeight >= 768) {
+                itens.style.display = 'block'
+            } else {
+                itens.style.display = 'none'
+            }
+        }
+
+
         function clickMenu() {
           if (itens.style.display == 'block') {
             itens.style.display = 'none'
